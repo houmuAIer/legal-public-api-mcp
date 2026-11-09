@@ -1,0 +1,25 @@
+{
+  "name": "legal-public-api-mcp",
+  "version": "0.1.0",
+  "description": "e-Gov法令・国会会議録・法人番号を束ねたリモートMCPサーバ（Cloudflare Workers）",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "fast-xml-parser": "^5.12.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261109.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.158.0"
+  },
+  "private": true,
+  "type": "module"
+}

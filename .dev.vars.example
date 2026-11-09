@@ -1,0 +1,5 @@
+# ローカル開発用（wrangler dev）。このファイルを .dev.vars にコピーして使う。.dev.vars はコミットしない。
+MCP_AUTH_TOKEN=local-test-token
+# 実IDが届くまではモック（node test/mock-houjin.mjs）に向ける
+HOUJIN_APP_ID=TESTAPPID0001
+HOUJIN_API_BASE=http://127.0.0.1:8799/4

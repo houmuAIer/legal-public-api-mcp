@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "legal-public-api-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+  // 無料プランで動く想定（実測でCPU時間は1リクエスト数ms）。
+  // 有料プランに切り替えた場合は、暴走時の上限として次の行を有効にする：
+  // "limits": { "cpu_ms": 5000 },
+  "vars": {
+    // 法人番号Web-APIの接続先（テスト時にモックへ差し替えるために変数化）
+    "HOUJIN_API_BASE": "https://api.houjin-bangou.nta.go.jp/4",
+    "EGOV_API_BASE": "https://laws.e-gov.go.jp/api/2",
+    "KOKKAI_API_BASE": "https://kokkai.ndl.go.jp/api"
+  }
+  // シークレット（wrangler secret put で登録。ここには書かない）
+  //   MCP_AUTH_TOKEN : MCPクライアントがBearerで送るトークン
+  //   HOUJIN_APP_ID  : 国税庁から通知されたアプリケーションID（13桁）
+}
